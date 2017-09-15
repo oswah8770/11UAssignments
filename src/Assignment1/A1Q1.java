@@ -25,6 +25,8 @@ public class A1Q1 {
         Robot karel = new Robot(kitchener, 0, 2, Direction.WEST);
         
         
+        
+        
         // add 8 walls
         new Wall(kitchener, 1, 1, Direction.NORTH);
         new Wall(kitchener, 1, 1, Direction.WEST);
