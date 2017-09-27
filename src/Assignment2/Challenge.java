@@ -36,7 +36,7 @@ public class Challenge {
         
         
         // creating walls and driveways
-        new Wall(kitchener, 1, 1, Direction.WEST);
+        
         new Wall(kitchener, 1, 2, Direction.EAST);
         new Wall(kitchener, 2, 2, Direction.EAST);
         new Wall(kitchener, 3, 2, Direction.EAST);
@@ -98,38 +98,55 @@ public class Challenge {
                karel.pickThing();
            if (karel.frontIsClear() == true) {
                karel.move();
-           
+           if (karel.frontIsClear() != true && karel.getAvenue() != 3) {
+               karel.turnLeft();
+               karel.turnLeft();
+               while (karel.frontIsClear() == true) {
+                   karel.move();
+               }
+           if (karel.frontIsClear() != true) {
+               karel.turnLeft();
+               karel.move();
+               karel.turnLeft();
+               }
+          
+           }
            
       }
    }
-}else{
-           karel.turnLeft();
-           karel.turnLeft();
-           while (karel.getStreet() != 6) {
-               if (karel.canPickThing() == true) {
-                   karel.pickThing();
-               
-               if (karel.frontIsClear() == true) {
-                   karel.move();
-                   
-               }
-           }
-       }
-       }
-       }       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    } 
-      
 }
+       
+       }
+       
+       
+       
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+}   
+      
+      
+
+      
+      
+      
+      
+      
+      
+      
+     
+      
+
     
     
     
