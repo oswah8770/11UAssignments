@@ -85,32 +85,55 @@ public class Challenge {
         
         
         // shoveling algorithm
-        while (karel.frontIsClear() == true) {
-            karel.move();
-            karel.turnLeft();
-            while (karel.frontIsClear() == true) {
-                karel.move();
-                if (karel.frontIsClear() != true) {
-                karel.turnLeft();
-                karel.turnLeft();
-                karel.turnLeft();
-                
-                
-                
-            }
-                }
-            
-            
-            
-                
-            }
-            
-            
-            
-        }
-            
-            
-        }
+        // first, find driveway
+        // clear driveway
+        // return to sidewalk and carry on
+       karel.move();
+       karel.turnLeft();
+       
+       while (karel.getStreet() != 6) { 
+      
+       if (karel.frontIsClear() == true) {
+           if (karel.canPickThing() == true) {
+               karel.pickThing();
+           if (karel.frontIsClear() == true) {
+               karel.move();
+           
+           
+      }
+   }
+}else{
+           karel.turnLeft();
+           karel.turnLeft();
+           while (karel.getStreet() != 6) {
+               if (karel.canPickThing() == true) {
+                   karel.pickThing();
+               
+               if (karel.frontIsClear() == true) {
+                   karel.move();
+                   
+               }
+           }
+       }
+       }
+       }       
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    } 
+      
+}
+    
+    
+    
+
         
     
     
