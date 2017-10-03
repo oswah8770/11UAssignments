@@ -89,7 +89,7 @@ public class A3Q4 {
             karel.move();
             karel.move();
             karel.turnLeft();
-            // once the firstsquare for loop has executed 2 times, execute the if statement below
+            // once the firstsquare for loop has executed 2 times, execute the for loop inside the if statement
             if (firstSquare == 2) {
                 for (int otherSquares = 0; otherSquares < 3; otherSquares = otherSquares + 1) {
                    // goes forward and then around the square, ending three spaces away from the start
