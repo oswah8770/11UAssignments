@@ -81,41 +81,22 @@ public class A3Q4 {
 
 
 
-        // for loops to go around the squares
-        for (int firstSquare = 0; firstSquare < 3; firstSquare = firstSquare + 1) {
-            // move forward around first square
+        // for loop to go around the squares
+        for (int firstSquare = 0; firstSquare < 16; firstSquare = firstSquare + 1) {
+            // go past around one side of the square
+            
 
             karel.move();
             karel.move();
             karel.move();
-            karel.turnLeft();
-            // once the firstsquare for loop has executed 2 times, execute the for loop inside the if statement
-            if (firstSquare == 2) {
-                for (int otherSquares = 0; otherSquares < 3; otherSquares = otherSquares + 1) {
-                   // goes forward and then around the square, ending three spaces away from the start
-                    // executes 3 times for the 3 squares
-                    karel.move();
-                    karel.move();
-                    karel.move();
-                    karel.move();
-                    karel.move();
-                    karel.move();
-                    karel.turnLeft();
-                    karel.move();
-                    karel.move();
-                    karel.move();
-                    karel.turnLeft();
-                    karel.move();
-                    karel.move();
-                    karel.move();
-                    karel.turnLeft();
-                }
-            }
+            // don't turn left in the middle (3, 3)
+           if (karel.getAvenue() == 3 && karel.getStreet() == 3) {
+               
+           }else{
+               karel.turnLeft();
+           }
         }
-// moves three spaces after all loops to reach the starting point
-karel.move();
-karel.move();
-karel.move();
+
 
 
 
