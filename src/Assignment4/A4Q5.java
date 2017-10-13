@@ -95,8 +95,8 @@ public class A4Q5 {
         double fifthPerc = totalFifthMark / fifthTotal * 100;
         System.out.println("Test 5: " + fifthPerc + "%");
         
-        
-        
+        double average = ((firstPerc + secondPerc + thirdPerc + fourthPerc + fifthPerc) / 5);
+        System.out.println("Average: " + average + "%");
         
     }
 }
