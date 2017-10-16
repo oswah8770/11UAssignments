@@ -31,6 +31,7 @@ public class A4Q7 {
             // don't move if the current square would've been over 100
             if (currentSquare + totalDice > 100) {
                 currentSquare = currentSquare;
+                System.out.println("You rolled the dice and would've landed past 100, so you gotta stay where you are!");
             }else{
             
             
