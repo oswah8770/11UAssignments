@@ -27,8 +27,17 @@ public class A4Q7 {
                 System.out.println("You Quit!");
                 break;
             }
+            
+            // don't move if the current square would've been over 100
+            if (currentSquare + totalDice > 100) {
+                currentSquare = currentSquare;
+            }else{
+            
+            
             // calculating their place on the board
             currentSquare = currentSquare + totalDice;
+            
+            
             
             // snakes
             if (currentSquare == 54) {
@@ -57,7 +66,7 @@ public class A4Q7 {
             if (currentSquare == 100) {
                 System.out.println("You Win!");
             }
-            
+            }
         
         }
         
