@@ -23,7 +23,7 @@ public class A4Q7 {
             Scanner diceSum = new Scanner(System.in);
             int totalDice = diceSum.nextInt();
             
-            if (totalDice == 0) {
+            if (totalDice == 0 || totalDice >= 12) {
                 System.out.println("You Quit!");
                 break;
             }
