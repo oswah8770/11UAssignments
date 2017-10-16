@@ -23,7 +23,13 @@ public class A4Q7 {
             Scanner diceSum = new Scanner(System.in);
             int totalDice = diceSum.nextInt();
             
-            if (totalDice == 0 || totalDice >= 12) {
+            // let them roll again if they input an incorrect number
+            if (totalDice >=12) {
+                System.out.println("Please enter a new number!");
+            }else{
+            
+            // quit if they put in 0 for the dice roll
+            if (totalDice == 0) {
                 System.out.println("You Quit!");
                 break;
             }
@@ -70,7 +76,7 @@ public class A4Q7 {
             }
         
         }
-        
+        }
         
         
         
