@@ -24,7 +24,7 @@ public class A4Q7 {
             int totalDice = diceSum.nextInt();
             
             // let them roll again if they input an incorrect number
-            if (totalDice >=12) {
+            if (totalDice > 12 || totalDice < 2) {
                 System.out.println("Please enter a new number!");
             }else{
             
@@ -68,8 +68,10 @@ public class A4Q7 {
                 currentSquare = 86;
             }
             
+            // telling place on the board
             System.out.println("You are on square " + currentSquare);
             
+            // oncer eaching square 100, you win
             if (currentSquare == 100) {
                 System.out.println("You Win!");
             }
