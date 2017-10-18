@@ -63,16 +63,16 @@ public class A4Q7 {
             // ladders
             if (currentSquare == 9) {
                 currentSquare = 34;
-                System.out.println("Hey, there's a ladder here... you should climb it, it goes to 34.");
+                System.out.println("Hey, climb this random ladder it takes you to square 34");
                 
             }
             if (currentSquare == 40) {
                 currentSquare = 64;
-                System.out.println("Hey, there's a ladder here... you should cimb it, it goes to 64.");
+                System.out.println("Hey, climb this random ladder it takes you to square 64");
             }
             if (currentSquare == 67) {
                 currentSquare = 86;
-                System.out.println("Hey, there's a ladder here... you should cimb it, it goes to 86.");
+                System.out.println("Hey, climb this random ladder it takes you to square 86.");
             }
             
             // telling place on the board
