@@ -113,7 +113,7 @@ public class A4Q10 extends javax.swing.JFrame {
     private void fToCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fToCActionPerformed
         String fahrenText = fBox.getText();
         int fahrenInt = Integer.parseInt(fahrenText);
-        int fahrenToC = (int) ((fahrenInt - 32) / 1.8);
+        int fahrenToC = (int) ((fahrenInt - 32) / (5/9));
         String fahrenToCText = String.valueOf(fahrenToC);
         fBox.setText(fahrenToCText);
         
