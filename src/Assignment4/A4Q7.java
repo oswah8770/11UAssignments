@@ -49,23 +49,30 @@ public class A4Q7 {
             // snakes
             if (currentSquare == 54) {
                 currentSquare = 19;
+                System.out.println("Oops! You landed on a snake and slithered down to 19");
             }
             if (currentSquare == 90) {
                 currentSquare = 48;
+                System.out.println("Oops! You landed on a snake and slithered down to 48!");
             }
             if (currentSquare == 99) {
                 currentSquare = 77;
+                System.out.println("Oops! You landed on a snake and slithered down to 77!");
             }
             
             // ladders
             if (currentSquare == 9) {
                 currentSquare = 34;
+                System.out.println("Hey, there's a ladder here... you should climb it, it goes to 34.");
+                
             }
             if (currentSquare == 40) {
                 currentSquare = 64;
+                System.out.println("Hey, there's a ladder here... you should cimb it, it goes to 64.");
             }
             if (currentSquare == 67) {
                 currentSquare = 86;
+                System.out.println("Hey, there's a ladder here... you should cimb it, it goes to 86.");
             }
             
             // telling place on the board
