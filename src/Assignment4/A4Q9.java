@@ -168,6 +168,7 @@ public class A4Q9 extends javax.swing.JFrame {
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
 
+        // convert text to integers, add them and output
         String firstNumText = firstNumBox.getText();
         int firstNum = Integer.parseInt(firstNumText);
         
@@ -180,6 +181,8 @@ public class A4Q9 extends javax.swing.JFrame {
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void subButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subButtonActionPerformed
+        
+        // convert text to integers, subtract them and output
         String firstNumText = firstNumBox.getText();
         int firstNum = Integer.parseInt(firstNumText);
         
@@ -194,6 +197,8 @@ public class A4Q9 extends javax.swing.JFrame {
     }//GEN-LAST:event_subButtonActionPerformed
 
     private void mulButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mulButtonActionPerformed
+        
+        // convert text to integers, multiply them and output
         String firstNumText = firstNumBox.getText();
         int firstNum = Integer.parseInt(firstNumText);
         
@@ -207,6 +212,8 @@ public class A4Q9 extends javax.swing.JFrame {
     }//GEN-LAST:event_mulButtonActionPerformed
 
     private void divButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divButtonActionPerformed
+        
+        // conver text to integers, divide them and output
         String firstNumText = firstNumBox.getText();
         int firstNum = Integer.parseInt(firstNumText);
         

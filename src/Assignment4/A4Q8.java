@@ -78,6 +78,8 @@ public class A4Q8 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void sayHelloButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sayHelloButtonActionPerformed
+        
+        // say hi to the name of the user
         String name = nameBox.getText();
         output.setText("Hello " + name);
         

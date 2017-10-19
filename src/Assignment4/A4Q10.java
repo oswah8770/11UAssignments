@@ -102,6 +102,8 @@ public class A4Q10 extends javax.swing.JFrame {
     }//GEN-LAST:event_cBoxActionPerformed
 
     private void cToFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cToFActionPerformed
+        
+        // convert to integer, to into fahrenheit, convert to string again, and output
         String celsiusText = cBox.getText();
         int celsiusInt = Integer.parseInt(celsiusText);
         int celsiusToF = (int) (celsiusInt * 1.8 + 32);
@@ -111,6 +113,8 @@ public class A4Q10 extends javax.swing.JFrame {
     }//GEN-LAST:event_cToFActionPerformed
 
     private void fToCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fToCActionPerformed
+        
+        // convert to integer, to into celsius, conver to string again, and output
         String fahrenText = fBox.getText();
         int fahrenInt = Integer.parseInt(fahrenText);
         int fahrenToC = (int) ((fahrenInt - 32) / (5/9));
