@@ -26,6 +26,7 @@ public class A5Q1 {
         // convert to lowercase
         word = word.toLowerCase();
 
+        int vowel = 0;
 
 
         for (int i = 0; i < word.length(); i++) {
@@ -35,28 +36,30 @@ public class A5Q1 {
                 String ending = word.substring(i);
 
                 word = front + "ub" + ending;
-                
-                i = i + 3;
-                
-                
-                
-                
-                
-                
-               
-                    
 
+                vowel = 0;
+                
+                
+                for (int z = 0; z + i + 4 < word.length(); z++) {
+                    System.out.println("in loop");
+                    if (word.charAt(z + i + 4) == 'a' || word.charAt(z + i + 4) == 'e' || word.charAt(z + i + 4) == 'i' || word.charAt(z + i + 4) == 'o' || word.charAt(z + i + 4) == 'u') {
+                        vowel++;
+                        System.out.println(vowel);
+                    } else {
+                        break;
+                    }
+                }
 
-
+                i = i + vowel;
+                
+                
             }
 
-
-
         }
+
+
         // output translated word
         System.out.println("In Ubbi Dubbi is: " + word);
-
-
 
     }
 }
