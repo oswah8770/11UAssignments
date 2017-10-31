@@ -25,6 +25,7 @@ public class A5Q1 {
 
         // convert to lowercase
         word = word.toLowerCase();
+        // make a blank string to create the translated word.
         boolean foundV = false;
 
         String translated = "";
@@ -32,20 +33,19 @@ public class A5Q1 {
         StringBuilder sb = new StringBuilder(translated);
 
 
-
+// for loop to build the translated word in the 'translated' string (blank)
         for (int i = 0; i < word.length(); i++) {
             if ((word.charAt(i) == 'a' || word.charAt(i) == 'e' || word.charAt(i) == 'i' || word.charAt(i) == 'o' || word.charAt(i) == 'u') && foundV == false) {
-                // when finds a vowel inserts ub before it, keeps adding the string
-                // inserts ub and the vowel after it
+                // inserts ub and the vowel after it after finding a vowel, makes found vowel true so it knows not to add ub until a consonant is found
                 sb.append("ub");
                 sb.append(word.charAt(i));
                 foundV = true;
 
             } else if ((word.charAt(i) == 'a' || word.charAt(i) == 'e' || word.charAt(i) == 'i' || word.charAt(i) == 'o' || word.charAt(i) == 'u') && foundV == true) {
-                // inserts just the vowel no ub (this comes after a vowel has already been found
+                // inserts just the vowel no ub (this comes after a vowel has already been found)
                 sb.append(word.charAt(i));
             } else {
-                // inserts the letter and just that
+                // inserts the letter and just that. makes found vowel false so it knows that it has found a consonant and can now add ub before the next vowel found
                 sb.append(word.charAt(i));
                 foundV = false;
             }
