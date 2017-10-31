@@ -25,41 +25,39 @@ public class A5Q1 {
 
         // convert to lowercase
         word = word.toLowerCase();
+        boolean foundV = false;
 
-        int vowel = 0;
+        String translated = "";
+
+        StringBuilder sb = new StringBuilder(translated);
+
 
 
         for (int i = 0; i < word.length(); i++) {
-            if (word.charAt(i) == 'a' || word.charAt(i) == 'e' || word.charAt(i) == 'i' || word.charAt(i) == 'o' || word.charAt(i) == 'u') {
-                // when finds a vowel inserts ub before it. skip the next letter by adding 3. 1 for the next char, 2 for the ub added
-                String front = word.substring(0, i);
-                String ending = word.substring(i);
+            if ((word.charAt(i) == 'a' || word.charAt(i) == 'e' || word.charAt(i) == 'i' || word.charAt(i) == 'o' || word.charAt(i) == 'u') && foundV == false) {
+                // when finds a vowel inserts ub before it, keeps adding the string
+                // inserts ub and the vowel after it
+                sb.append("ub");
+                sb.append(word.charAt(i));
+                foundV = true;
 
-                word = front + "ub" + ending;
-
-                vowel = 0;
-                
-                
-                for (int z = 0; z + i + 4 < word.length(); z++) {
-                    System.out.println("in loop");
-                    if (word.charAt(z + i + 4) == 'a' || word.charAt(z + i + 4) == 'e' || word.charAt(z + i + 4) == 'i' || word.charAt(z + i + 4) == 'o' || word.charAt(z + i + 4) == 'u') {
-                        vowel++;
-                        System.out.println(vowel);
-                    } else {
-                        break;
-                    }
-                }
-
-                i = i + vowel;
-                
-                
+            } else if ((word.charAt(i) == 'a' || word.charAt(i) == 'e' || word.charAt(i) == 'i' || word.charAt(i) == 'o' || word.charAt(i) == 'u') && foundV == true) {
+                // inserts just the vowel no ub (this comes after a vowel has already been found
+                sb.append(word.charAt(i));
+            } else {
+                // inserts the letter and just that
+                sb.append(word.charAt(i));
+                foundV = false;
             }
+
+
+
 
         }
 
 
         // output translated word
-        System.out.println("In Ubbi Dubbi is: " + word);
+        System.out.println("In Ubbi Dubbi is: " + sb);
 
     }
 }
