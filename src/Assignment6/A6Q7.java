@@ -19,10 +19,10 @@ public class A6Q7 {
      */
     public static void main(String[] args) {
         // create array of numbers
-        int[] numArray = new int[1000];
+        int[] numArray = new int[1001];
 
         // array of true and false corresponding to a number in the array
-        boolean[] primeOrNah = new boolean[1000];
+        boolean[] primeOrNah = new boolean[1001];
 
         // integer to know what prime number we're counting up by
         int t = 2;
@@ -64,7 +64,7 @@ public class A6Q7 {
         
         if (primeOrNah[numInput] == true) {
         
-        System.out.println(numArray[numInput] + ", is a prime number");
+        System.out.println(numArray[numInput] + " is a prime number");
         } else {
             System.out.println(numArray[numInput] + " is NOT a prime number");
         }
