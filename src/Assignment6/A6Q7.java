@@ -57,7 +57,7 @@ public class A6Q7 {
                 
             }
         
-        // output
+        // output. If the value of the boolean that represents whether the number is prime or not is true, it outputs that it is a prime and vise versa
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter a number");
         int numInput = input.nextInt();
