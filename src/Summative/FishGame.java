@@ -32,8 +32,12 @@ public class FishGame extends JComponent {
     long desiredFPS = 60;
     long desiredTime = (1000) / desiredFPS;
     // YOUR GAME VARIABLES WOULD GO HERE
-    // title screen boolaen
+    // title screen boolean, and a boolean to see if the player has died or not
     boolean menu = true;
+    boolean gameOn = false;
+    
+    // boolean to see if the score was saved before it reset to 0
+    boolean storedScore = false;
     // fish x, y, width, height
     int fishX = 100;
     int fishY = 300;
@@ -193,7 +197,7 @@ public class FishGame extends JComponent {
          
         }
         
-        if (menu == false) {
+        if (menu == false && gameOn) {
             // if in the game, draw this
 
             // background water
@@ -252,19 +256,42 @@ public class FishGame extends JComponent {
             g.setColor(Color.GREEN);
             g.setFont(biggerFont);
             g.drawString("" + score, WIDTH - 100, 50);
-            
-            // if game is over
-            if (gameOver) {
-                g.drawString("GAME OVER", WIDTH / 2 - 150, HEIGHT / 2);
-            }
 
             // fish food counter
             g.setColor(Color.ORANGE);
             g.setFont(biggerFont);
-            g.drawString("" + fishFoodCounter, 100, 50);
+            g.drawString("" + fishFoodCounter + "/5", 100, 50);
         }
 
-
+        // if player has died
+        if (menu == false && gameOn == false) {
+            g.setColor(Color.BLUE);
+            g.fillRect(0, 0, 800, 600);
+            
+            // bubbles
+            g.setColor(Color.CYAN);
+            g.drawOval(bubbleX, bubbleY, 50, 50);
+            g.drawOval(bubbleX2, bubbleY2, 25, 25);
+            g.drawOval(bubbleX3, bubbleY3, 35, 35);
+            
+            // game over!
+            g.setColor(Color.ORANGE);
+            g.setFont(biggerFont);
+            g.drawString("GAME OVER", WIDTH / 2 - 125, HEIGHT / 2);
+            
+            // showing score and telling how to play again.
+            g.setColor(darkPink);
+            g.setFont(smallerFont);
+            
+            g.drawString("Your Score Was: " + score, WIDTH / 2 - 125, HEIGHT / 2 + 75);
+            storedScore = true;
+            
+            g.drawString("Press 'SPACE' to try again", WIDTH / 2 - 150, HEIGHT / 2 + 150);
+            
+        }
+        
+        
+        
         // GAME DRAWING ENDS HERE
     }
 
@@ -328,7 +355,7 @@ public class FishGame extends JComponent {
                 }
             }
 
-            if (menu == false) {
+            if (menu == false && gameOn) {
                 // game code not in menu
 
                 // move the lines backwards make it look like fish is moving forward
@@ -439,21 +466,24 @@ public class FishGame extends JComponent {
 
                 if (hasCollided(obstacleCenterX, obstacleCenterY, obstacleWidth, fishCenterX, fishCenterY, fishWidth) == true) {
                     gameOver = true;
-                    done = true;
+                    gameOn = false;
+                    
                 }
 
                 if (hasCollided(obstacleCenterX2, obstacleCenterY2, obstacleWidth, fishCenterX, fishCenterY, fishWidth) == true) {
                     gameOver = true;
-                    done = true;
+                    gameOn = false;
                 }
 
                 if (hasCollided(obstacleCenterX3, obstacleCenterY3, obstacleWidth, fishCenterX, fishCenterY, fishWidth) == true) {
                     gameOver = true;
-                    done = true;
+                    gameOn = false;
+                    
                 }
                 if (hasCollided(obstacleCenterX4, obstacleCenterY4, obstacleWidth, fishCenterX, fishCenterY, fishWidth) == true) {
                     gameOver = true;
-                    done = true;
+                    gameOn = false;
+                    
                 }
 
 
@@ -507,6 +537,60 @@ public class FishGame extends JComponent {
                     bubbleY3 = 650;
                 }
             }
+            
+            if (menu == false && gameOn == false) {
+                // setting x positions back to what it was like at the start of the game; restarting
+                fishX = 0;
+                obstacleX = WIDTH + obstacleWidth;
+                obstacleX2 = WIDTH + obstacleWidth + 150;
+                obstacleX3 = WIDTH + obstacleWidth + 300;
+                obstacleX4 = WIDTH + obstacleWidth + 450;
+                
+                fishFoodX = 400;
+                
+                // resetting speed
+                fishSpeed = 4;
+                fishFoodSpeed = 7;
+                obstacleSpeed = 3;
+                
+                // bubbles movement
+                // if in the menu, do this
+                // bubbles rising
+
+                bubbleY = bubbleY - 1;
+                bubbleY2 = bubbleY2 - 1;
+                bubbleY3 = bubbleY3 - 1;
+
+                int randomNum = (int) (Math.random() * (40 - 1 + 1)) + 1;
+                if (randomNum == 1) {
+                    bubbleX = bubbleX - 3;
+                    bubbleX2 = bubbleX2 - 3;
+                    bubbleX3 = bubbleX3 - 3;
+                } else if (randomNum == 2) {
+                    bubbleX = bubbleX + 3;
+                    bubbleX2 = bubbleX2 + 3;
+                    bubbleX3 = bubbleX3 + 3;
+                } else {
+                }
+
+                // if they reach top of screen, resets them at the bottom
+                if (bubbleY <= -50) {
+                    bubbleY = 650;
+                }
+
+                if (bubbleY2 <= -50) {
+                    bubbleY2 = 650;
+                }
+
+                if (bubbleY3 <= -50) {
+                    bubbleY3 = 650;
+                }
+                
+            }
+            
+            
+            
+            
             // GAME LOGIC ENDS HERE 
             // update the drawing (calls paintComponent)
             repaint();
@@ -569,6 +653,10 @@ public class FishGame extends JComponent {
                 down = true;
             } else if (key == KeyEvent.VK_SPACE) {
                 menu = false;
+                gameOn = true;
+                scoreCounter = 0;
+                score = 0;
+                fishFoodCounter = 0;
             }
         }
 
@@ -587,6 +675,10 @@ public class FishGame extends JComponent {
                 down = false;
             } else if (key == KeyEvent.VK_SPACE) {
                 menu = false;
+                gameOn = true;
+                scoreCounter = 0;
+                score = 0;
+                fishFoodCounter = 0;
             }
         }
     }
