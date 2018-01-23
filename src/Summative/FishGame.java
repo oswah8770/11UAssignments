@@ -39,7 +39,7 @@ public class FishGame extends JComponent {
     // boolean to see if the score was saved before it reset to 0
     boolean storedScore = false;
     // fish x, y, width, height
-    int fishX = 100;
+    int fishX = 150;
     int fishY = 300;
     int fishHeight = 100;
     int fishWidth = 100;
@@ -394,14 +394,6 @@ public class FishGame extends JComponent {
                     fishY = fishY + fishSpeed;
                 }
 
-                // animating fin
-                
-
-                // if reaches the end of the screen puts x off screen on the left
-                if (fishX >= 900) {
-                    fishX = -150;
-                }
-
 
                 // obstacles
                 // increases by 0.05 speed every second (obstacle speed increases 0.0168 sixty times (sixty frames) then divide that number by 20 and add it to the original)
@@ -540,7 +532,7 @@ public class FishGame extends JComponent {
             
             if (menu == false && gameOn == false) {
                 // setting x positions back to what it was like at the start of the game; restarting
-                fishX = 0;
+                fishX = 150;
                 obstacleX = WIDTH + obstacleWidth;
                 obstacleX2 = WIDTH + obstacleWidth + 150;
                 obstacleX3 = WIDTH + obstacleWidth + 300;
